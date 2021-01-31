@@ -1,0 +1,16 @@
+os: linux
+dist: xenial
+language: python
+python:
+  - 3.9
+
+install:
+  - pip install ".[test]" . # install package + test dependencies
+  - pip install -r requirements.txt
+
+script: behave -f allure_behave.formatter:AllureFormatter -o allure-results ./acceptance_tests/features # run tests
+
+after_success:
+  python send_results.py
+
+

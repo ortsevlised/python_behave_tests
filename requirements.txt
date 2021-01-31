@@ -1,0 +1,8 @@
+behave~=1.2.6
+Faker~=5.8.0
+selenium~=3.141.0
+setuptools~=52.0.0
+PyHamcrest
+webDriver-manager
+allure-behave
+requests~=2.25.1
