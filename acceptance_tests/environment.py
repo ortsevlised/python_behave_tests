@@ -4,6 +4,9 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 
 def before_all(context):
+    """
+    Setting up the browser
+    """
     context.driver = select_browser(context)
     context.driver.set_page_load_timeout(10)
     context.driver.implicitly_wait(10)
@@ -12,6 +15,10 @@ def before_all(context):
 
 
 def select_browser(context):
+    """
+    Selects the browser to user according the the argument passed to the behave runner
+    if no one is passed it will run the remote webdriver by default
+    """
     browser = context.config.userdata.get('browser')
     if not browser:
         browser = 'remote'

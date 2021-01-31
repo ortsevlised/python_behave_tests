@@ -19,13 +19,15 @@ def step_impl(context):
     for row in context.table:
         data_type, identifier, title = generate_attribute_fields(row)
         add_attributes.add_attribute(title, identifier, data_type)
-        # assert_that(custom_attributes.is_currently_visible(custom_attributes.ERROR_ALERTS), equal_to(False))TODO put it somewhere else
         time.sleep(0.5)  # Try to avoid sleeps. However there's nothing to validate for state change there
         attributes.append({'title': title, 'identifier': identifier, 'data_type': data_type})
     context.attributes = attributes
 
 
 def generate_attribute_fields(row):
+    """
+    Creates an attribute field from the row of examples passed from the scenario outline
+    """
     title_ = row['title']
     identifier_ = row['identifier']
     data_type = row['data_type']
@@ -81,7 +83,8 @@ def step_impl(context):
 @then("the field is removed from the list of custom attributes")
 def step_impl(context):
     attributes_page = CustomAttributes(context.driver)
-    time.sleep(1)  # todo remove
+    time.sleep(1)  # This could be replaced by a loop checking a few times
+    # for the attributes length to have decreased.
     table_of_attributes = attributes_page.table_rows
     assert_that(len(table_of_attributes), equal_to(context.deleted_response['amount']))
     assert_that(context.deleted_response['attribute_details'], not_(is_in(table_of_attributes)))
