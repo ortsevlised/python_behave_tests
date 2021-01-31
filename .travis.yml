@@ -10,7 +10,7 @@ install:
 
 script: behave -f allure_behave.formatter:AllureFormatter -o allure-results ./acceptance_tests/features # run tests
 
-after_success:
+after_script:
   python send_results.py
 
 

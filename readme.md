@@ -35,7 +35,13 @@
 
 | Service       | URL      |
 | ---------- | -------- |
-| Reports    | [https://orange-snail-57.loca.lt][PlDb] |
-| Selenoid UI| [https://lovely-deer-85.loca.lt/][PlDb]|
+| Reports    | https://orange-snail-57.loca.lt |
+| Selenoid UI| https://lovely-deer-85.loca.lt  |
+
+### Todo:
+- Add more tests
+- Add DB integration
+- Mocks
+- Choose a good Selenium wrapper and add it
 
 
