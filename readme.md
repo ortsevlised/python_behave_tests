@@ -1,6 +1,7 @@
 # Automation Framework [![Build Status](https://travis-ci.com/ortsevlised/python_behave_tests.svg?token=x5Quo4yeKYWSC7Yayepw&branch=main)](https://travis-ci.com/github/ortsevlised/python_behave_tests/)
 
 ### This is a proof of concept for Table.co using a BDD approach with the following tools:
+
 - Selenium for UI tests.
 - Behave for BDD.
 - Selenoid to run the test remotely.
@@ -8,6 +9,7 @@
 - Docker to spin up Selenoid and Allure instances.
 
 ### Test are defined in the features files using the Gherkin syntax:
+
 `'Given, When, Then'`
 
 - It uses **Travis-CI** for continuous testing, triggering a new test execution after each commit pushed.
@@ -33,7 +35,7 @@
 
 | Service       | URL      |
 | ---------- | -------- |
-| Reports    | [https://hungry-bear-95.loca.lt/allure-docker-service/projects/table/reports/latest/index.html][PlDb] |
+| Reports    | [https://orange-snail-57.loca.lt][PlDb] |
 | Selenoid UI| [https://lovely-deer-85.loca.lt/][PlDb]|
 
 

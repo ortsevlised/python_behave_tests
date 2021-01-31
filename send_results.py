@@ -6,9 +6,10 @@ import requests
 
 # This directory is where you have all your results locally, generally named as `allure-results`
 allure_results_directory = '/allure-results'
-# This url is where the Allure container is deployed. We are using localhost as example
-allure_server = 'https://hungry-bear-95.loca.lt'
-# Project ID according to existent projects in your Allure container - Check endpoint for project creation >> `[POST]/projects`
+# This url is where the Allure container is deployed.
+allure_server = 'https://orange-snail-57.loca.lt'
+# Project ID according to existent projects in your Allure container
+# Check endpoint for project creation >> `[POST]/projects`
 project_id = 'table'
 
 current_directory = os.path.dirname(os.path.realpath(__file__))
@@ -60,13 +61,16 @@ json_response_body = json.loads(response.content)
 json_prettier_response_body = json.dumps(json_response_body, indent=4, sort_keys=True)
 print(json_prettier_response_body)
 
-# If you want to generate reports on demand use the endpoint `GET /generate-report` and disable the Automatic Execution >> `CHECK_RESULTS_EVERY_SECONDS: NONE`
+# If you want to generate reports on demand use the endpoint `GET /generate-report`
+# and disable the Automatic Execution >> `CHECK_RESULTS_EVERY_SECONDS: NONE`
 """
 print("------------------GENERATE-REPORT------------------")
 execution_name = 'execution from my script'
 execution_from = 'http://google.com'
 execution_type = 'teamcity'
-response = requests.get(allure_server + '/allure-docker-service/generate-report?project_id=' + project_id + '&execution_name=' + execution_name + '&execution_from=' + execution_from + '&execution_type=' + execution_type, headers=headers, verify=ssl_verification)
+response = requests.get(allure_server + '/allure-docker-service/generate-report?project_id=' 
++ project_id + '&execution_name=' + execution_name + '&execution_from=' + execution_from +
+ '&execution_type=' + execution_type, headers=headers, verify=ssl_verification)
 print("STATUS CODE:")
 print(response.status_code)
 print("RESPONSE:")
