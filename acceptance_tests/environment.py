@@ -21,7 +21,7 @@ def select_browser(context):
     """
     browser = context.config.userdata.get('browser')
     if not browser:
-        browser = 'chrome'
+        browser = 'remote'
     if browser.lower() == 'remote':
         capabilities = {
             "browserName": "chrome",
