@@ -35,13 +35,13 @@
 
 | Service       | URL      |
 | ---------- | -------- |
-| Reports    | https://orange-snail-57.loca.lt |
+| Reports    | https://orange-snail-57.loca.lt/allure-docker-service/projects/table/reports/latest/index.html |
 | Selenoid UI| https://lovely-deer-85.loca.lt  |
 
 ### Todo:
 - Add more tests
 - Add DB integration
-- Mocks
+- Create Mocks
 - Choose a good Selenium wrapper and add it
 
 
