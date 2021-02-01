@@ -10,7 +10,7 @@ class BasePage:
 
     @property
     def url(self):
-        return 'http://192.168.1.1:8080'
+        return 'http://192.168.100.5:8080'
 
     @staticmethod
     def clear_input(element):
