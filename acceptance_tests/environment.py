@@ -32,7 +32,7 @@ def select_browser(context):
                 "screenResolution": "1280x1024x24"
             }
         }
-        return webdriver.Remote(command_executor="https://blue-fireant-56.loca.lt/wd/hub",
+        return webdriver.Remote(command_executor="https://perfect-fly-85.loca.lt/wd/hub",
                                 desired_capabilities=capabilities)
     elif browser.lower() == 'chrome':
         return webdriver.Chrome(ChromeDriverManager().install())
