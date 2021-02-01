@@ -21,7 +21,7 @@ def select_browser(context):
     """
     browser = context.config.userdata.get('browser')
     if not browser:
-        browser = 'remote'
+        browser = 'chrome'
     if browser.lower() == 'remote':
         capabilities = {
             "browserName": "chrome",
@@ -32,7 +32,7 @@ def select_browser(context):
                 "screenResolution": "1280x1024x24"
             }
         }
-        return webdriver.Remote(command_executor="https://perfect-fly-85.loca.lt/wd/hub",
+        return webdriver.Remote(command_executor="https://ancient-stingray-29.loca.lt/wd/hub",
                                 desired_capabilities=capabilities)
     elif browser.lower() == 'chrome':
         return webdriver.Chrome(ChromeDriverManager().install())

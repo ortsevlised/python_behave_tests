@@ -7,7 +7,7 @@ import requests
 # This directory is where you have all your results locally, generally named as `allure-results`
 allure_results_directory = '/allure-results'
 # This url is where the Allure container is deployed.
-allure_server = 'https://tame-chipmunk-39.loca.lt'
+allure_server = 'https://nervous-skunk-3.loca.lt'
 # Project ID according to existent projects in your Allure container
 # Check endpoint for project creation >> `[POST]/projects`
 project_id = 'table'
