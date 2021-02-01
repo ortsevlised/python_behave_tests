@@ -3,6 +3,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 
+from acceptance_tests import config
+
 
 class BasePage:
     def __init__(self, driver):
@@ -10,7 +12,7 @@ class BasePage:
 
     @property
     def url(self):
-        return 'http://192.168.100.5:8080'
+        return getattr(config, 'TABLE_URL')
 
     @staticmethod
     def clear_input(element):

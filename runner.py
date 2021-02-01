@@ -13,7 +13,7 @@ if __name__ == '__main__':
     behave_options = '' if not args.behave_options else args.behave_options
 
     command = f'behave -k --no-capture -f allure_behave.formatter:AllureFormatter ' \
-              f'-o %allure_result_folder% "{test_dir}"' \
+              f'-o allure-results "{test_dir}"' \
               f'{behave_options} '
 
 print(f"Running command: {command}")

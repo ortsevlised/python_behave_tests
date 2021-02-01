@@ -2,6 +2,8 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
+from acceptance_tests import config
+
 
 def before_all(context):
     """
@@ -32,11 +34,11 @@ def select_browser(context):
                 "screenResolution": "1280x1024x24"
             }
         }
-        return webdriver.Remote(command_executor="https://ancient-stingray-29.loca.lt/wd/hub",
+        return webdriver.Remote(command_executor=getattr(config, "REMOTE_URL"),
                                 desired_capabilities=capabilities)
     elif browser.lower() == 'chrome':
         return webdriver.Chrome(ChromeDriverManager().install())
-    elif browser.lower() == 'headlesschrome':
+    elif browser.lower() == 'headless_chrome':
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
         return webdriver.Chrome(ChromeDriverManager().install(), options=options)
