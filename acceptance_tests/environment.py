@@ -27,7 +27,7 @@ def select_browser(context):
     if browser.lower() == 'remote':
         capabilities = {
             "browserName": "chrome",
-            "browserVersion": "88.0",
+            "browserVersion": "80.0",
             "selenoid:options": {
                 "enableVNC": True,
                 "enableVideo": False,
@@ -44,6 +44,8 @@ def select_browser(context):
         return webdriver.Chrome(ChromeDriverManager().install(), options=options)
     elif browser.lower() in ('ff', 'firefox'):
         return webdriver.Firefox(GeckoDriverManager().install())
+    elif browser.lower() == 'safari':
+        return webdriver.Safari()
     else:
         raise Exception("The browser type '{}' is not supported".format(context))
 
