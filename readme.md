@@ -1,6 +1,6 @@
 # Automation Framework [![Build Status](https://travis-ci.com/ortsevlised/python_behave_tests.svg?token=x5Quo4yeKYWSC7Yayepw&branch=main)](https://travis-ci.com/github/ortsevlised/python_behave_tests/)
 
-### This is a proof of concept for Table.co using a BDD approach with the following tools:
+### This is a proof of concept using a BDD approach with the following tools:
 
 - Selenium for UI tests.
 - Behave for BDD.
